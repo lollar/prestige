@@ -7,5 +7,9 @@ import Prestige.ManagedLink as ManagedLink
 
 routes :: ScottyM ()
 routes = do
-  get "/hello" ManagedLink.start
+  get "/hello" $ do
+    text "hello world!"
 
+  get "/hello/:name" $ do
+    name <- param "name"
+    ManagedLink.start name

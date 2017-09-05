@@ -3,13 +3,13 @@
 module Prestige.API where
 
 import Web.Scotty 
-import Prestige.ManagedLink as ManagedLink
+import Prestige.Controllers.ManagedLinks.Create as ManagedLinksCreate
 
 routes :: ScottyM ()
 routes = do
   get "/hello" $ do
     text "hello world!"
 
-  get "/hello/:name" $ do
-    name <- param "name"
-    ManagedLink.start name
+  post "/managed_links/:destination_url" $ do
+    name <- param "destination_url"
+    ManagedLinksCreate.start name

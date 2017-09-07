@@ -11,5 +11,5 @@ routes = do
     text "hello world!"
 
   post "/managed_links/:destination_url" $ do
-    name <- param "destination_url"
-    ManagedLinksCreate.start name
+    destinationUrl <- param "destination_url"
+    ManagedLinksCreate.start destinationUrl

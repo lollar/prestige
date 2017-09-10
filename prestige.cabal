@@ -28,6 +28,7 @@ executable prestige-exe
                      , prestige
                      , scotty
                      , aeson
+                     , postgresql-simple
   default-language:    Haskell2010
 
 test-suite prestige-test

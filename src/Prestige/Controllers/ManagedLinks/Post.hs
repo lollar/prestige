@@ -6,7 +6,9 @@ module Prestige.Controllers.ManagedLinks.Post where
 import Web.Scotty
 import Data.Monoid ((<>))
 
-start destinationUrl = do
-  -- | managed_link = Create.persist(destination_url)
-  -- | Set result object result to the managed_link.short_code 
-  text destinationUrl
+import Prestige.Resources.ManagedLinks.Post as PostResource
+
+start params = do
+  destinationUrl <- params "destination_url"
+  result <- PostResource.create destinationUrl
+  json result

@@ -10,6 +10,6 @@ routes = do
   get "/hello" $ do
     text "hello world!"
 
-  post "/managed_links/:destination_url" $ do
-    destinationUrl <- param "destination_url"
-    ManagedLinksPost.start destinationUrl
+  post "/managed_links" $ do
+    params <- param 
+    ManagedLinksPost.start params

@@ -3,7 +3,7 @@
 module Prestige.API where
 
 import Web.Scotty 
-import Prestige.Controllers.ManagedLinks.Create as ManagedLinksCreate
+import Prestige.Controllers.ManagedLinks.Post as ManagedLinksPost
 
 routes :: ScottyM ()
 routes = do
@@ -12,4 +12,4 @@ routes = do
 
   post "/managed_links/:destination_url" $ do
     destinationUrl <- param "destination_url"
-    ManagedLinksCreate.start destinationUrl
+    ManagedLinksPost.start destinationUrl

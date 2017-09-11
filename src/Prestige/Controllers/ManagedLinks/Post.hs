@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE DeriveGeneric #-}
 
-module Prestige.Controllers.ManagedLinks.Create where
+module Prestige.Controllers.ManagedLinks.Post where
 
 import Web.Scotty
 import Data.Monoid ((<>))
